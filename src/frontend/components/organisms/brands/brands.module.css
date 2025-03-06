@@ -1,0 +1,55 @@
+@media screen and (max-width: 1080px) {
+    .brandsBanner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        padding: 40px 16px;
+        box-sizing: border-box;
+        background-color: black;
+    }
+
+    .containerBox {
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .companiesImage {
+        height: 24px;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .brandsBanner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        padding: 40px 16px;
+        box-sizing: border-box;
+        background-color: #000000;
+    }
+
+    .containerBox {
+        width: 1440px;
+        padding: 0 100px;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .companiesImage {
+        height: 24px;
+    }
+}

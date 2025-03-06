@@ -1,0 +1,252 @@
+@media screen and (max-width: 1080px) {
+    .defaultContainer {
+        width: 100%;
+        height: auto;
+        background-color: #F2F0F1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerUpperBanner {
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+        height: 520px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .bannerTitle {
+        color: black;
+        width: 315px;
+        font-size: 2.2rem;
+        line-height: 2.1rem;
+        font-family: "Integral CF", sans-serif;
+        text-align: start;
+        font-weight: 1000;
+    }
+
+    .collectionDescription {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.3rem;
+        font-weight: 400;
+        color: black;
+        opacity: 60%;
+        text-align: start;
+    }
+
+    .containerButton {
+        width: 100%;
+        height: 52px;
+        padding: 16px;
+        background-color: black;
+        color: white;
+        border-radius: 62px;
+        border: none;
+        font-family: 'Satoshi', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        cursor: pointer;
+        margin-bottom: 32px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .containerButton:hover {
+        background-color: #1A1A1A;
+        transform: scale(1.05);
+    }
+
+    .containerInfo {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 55px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .statisticNumber {
+        width: 130px;
+        height: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .itemValue {
+        font-size: 24px;
+        line-height: 2rem;
+        font-weight: 700;
+        font-family: 'Satoshi', sans-serif;
+        margin-bottom: 5px;
+    }
+
+    .itemDescription {
+        color: black;
+        opacity: 60%;
+        font-size: 0.875rem;
+        line-height: 1.4rem;
+        text-align: center;
+    }
+
+    .containerBannerImage {
+        width: 100%;
+        height: 450px;
+        margin-top: 12px;
+        background-color: #F2F0F1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .containerBoxBanner {
+        width: 100%;
+        height: 450px;
+        position: relative;
+        background-image: url('public/assets/home-page/mobile-banner.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .rightUpStar {
+        position: absolute;
+        bottom: 332px;
+        right: 20px;
+        width: 76px;
+        height: 76px;
+    }
+
+    .leftCenterStar {
+        position: absolute;
+        bottom: 267px;
+        left: 20px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .containerBanner {
+        width: 100%;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #F2F0F1;
+    }
+
+    .defaultContainer {
+        width: 100%;
+        max-width: 1440px;
+        background-image: url('public/assets/home-page/banner.png');
+        height: 663px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .containerUpperBanner {
+        width: 600px;
+        margin: 100px;
+    }
+
+    .bannerTitle {
+        color: black;
+        font-size: 64px;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .collectionDescription {
+        display: flex;
+        color: #00000099;
+        opacity: 60%;
+        font-size: 16px;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .containerButton {
+        width: 210px;
+        height: 52px;
+        background-color: black;
+        color: white;
+        border-radius: 62px;
+        border: none;
+        font-family: 'Satoshi', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .containerButton:hover {
+        background-color: #1A1A1A;
+        transform: scale(1.05);
+    }
+
+    .statisticNumber {
+        width: 100%;
+        height: 74px;
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .containerInfo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Satoshi', sans-serif;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .itemValue {
+        font-size: 40px;
+        font-weight: 700;
+        color: black;
+        margin: 0;
+    }
+
+    .itemDescription {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #000000;
+        opacity: 60%;
+        margin: 0;
+    }
+
+    .rightUpStar {
+        width: 104px;
+        height: 104px;
+        position: absolute;
+        top: 86px;
+        right: 81px;
+    }
+
+    .leftCenterStar {
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        top: 297px;
+        right: 634px;
+    }
+}

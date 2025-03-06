@@ -1,0 +1,488 @@
+@media screen and (max-width: 1080px) {
+    .containerFooter {
+        width: 100%;
+        color: black;
+    }
+
+    .containerBoxFooter {
+        width: 100%;
+        height: auto;
+        padding: 24px;
+        box-sizing: border-box;
+        background: linear-gradient(to bottom, #FFFFFF 15%, #F0F0F0 15%);
+    }
+
+    .containerBannerFooter {
+        width: 100%;
+        height: 293px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: black;
+        border-radius: 20px;
+        padding: 0 24px 24px 24px;
+        box-sizing: border-box;
+        gap: 12px;
+    }
+
+    .footerBannerTitle {
+        font-family: "Integral CF", sans-serif;
+        font-weight: 800;
+        color: white;
+        line-height: 35px;
+        font-size: 32px;
+    }
+
+    .loginConfirmation {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footerInput {
+        background-color: white;
+        width: 100%;
+        height: 42px;
+        border: none;
+        border-radius: 62px;
+        box-sizing: border-box;
+        padding-left: 50px;
+        background-image: url("public/assets/home-page/letter.png");
+        background-repeat: no-repeat;
+        background-position: 16px center;
+        background-size: 20px 16px;
+        color: #000000;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        font-family: 'Satoshi', sans-serif;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .footerInput:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        height: 45px;
+        transform: scale(1.04);
+    }
+
+    .footerInput::placeholder {
+        color: #aaaaaa;
+    }
+
+
+    .subscriberButton {
+        width: 100%;
+        height: 42px;
+        background: #FFFFFF;
+        border-radius: 62px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .emailResult {
+        font-size: 14px;
+    }
+
+    .infosFooter {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .infosAboutStore {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .socialIcons {
+        display: flex;
+        flex-direction: column;
+        height: 130px;
+        padding: 10px;
+        margin: 32px 0;
+        justify-content: space-between;
+    }
+
+    .shopLogoFooter {
+        width: 160px;
+        font-size: 33px;
+        line-height: 40px;
+        font-family: 'Satoshi', sans-serif;
+        font-weight: 1000;
+        margin: 0;
+        padding-bottom: 25px;
+    }
+
+    .reviewFooter {
+        display: flex;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+        padding-bottom: 35px;
+        opacity: 60%;
+        margin: 0 auto;
+    }
+
+    .containerIcons {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .icon svg {
+        width: 20px;
+        height: 20px;
+        fill: black;
+        transition: fill 0.3s ease;
+    }
+
+    .icon:hover {
+        background-color: black;
+        transform: scale(1.1);
+    }
+
+    .icon:hover svg {
+        fill: white;
+    }
+
+    .iconFacebook svg {
+        fill: #000000;
+        width: 30px;
+        height: 30px;
+    }
+
+    .iconFacebook:hover {
+        background-color: black;
+    }
+
+    .iconFacebook:hover svg {
+        fill: white;
+    }
+
+    .footerNav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 24px 60px;
+        margin-top: 42px;
+    }
+
+    .containerFooterNav {
+        width: 130px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .titleFooterNav {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .listNav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .optionFooterNav {
+        margin: 5px 0;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .edgeToSeparate {
+        width: 100%;
+        border-bottom: 1px solid #cfcfcf;
+        margin: 40px 0 16px 0;
+    }
+
+    .optionFooterNav .optionText {
+        color: #777777;
+        text-decoration: none;
+    }
+
+    .paymentMethods {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .review {
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+        opacity: 60%;
+        margin: 0;
+    }
+
+    .containerPayment {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .containerFooter {
+        width: 100%;
+        color: black;
+    }
+
+    .containerBoxFooter {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        box-sizing: border-box;
+        background: linear-gradient(to bottom, #ffffff 15%, #f0f0f0 15%);
+    }
+
+    .containerBannerFooter {
+        width: 100%;
+        max-width: 1250px;
+        height: 180px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        border-radius: 20px;
+        padding: 0 64px;
+        box-sizing: border-box;
+        gap: 12px;
+        position: relative;
+    }
+
+    .footerBannerTitle {
+        width: 40%;
+        color: #ffffff;
+        font-weight: 1000;
+        line-height: 45px;
+        font-size: 40px;
+    }
+
+    .loginConfirmation {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        gap: 14px;
+    }
+
+    .footerInput {
+        background-color: white;
+        width: 100%;
+        height: 42px;
+        border: none;
+        border-radius: 62px;
+        box-sizing: border-box;
+        padding-left: 46px;
+        background-image: url("public/assets/home-page/letter.png");
+        background-repeat: no-repeat;
+        background-position: 16px center;
+        background-size: 24px 18px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        font-family: 'Satoshi', sans-serif;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .footerInput:focus {
+        outline: none;
+        height: 45px;
+        transform: scale(1.04);
+    }
+
+    .footerInput::placeholder {
+        color: #aaaaaa;
+    }
+
+    .subscriberButton {
+        width: 100%;
+        height: 42px;
+        background: #ffffff;
+        border-radius: 12px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Satoshi', sans-serif;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .subscriberButton:hover {
+        border-radius: 24px;
+        background: #f0f0f0;
+        transform: scale(1.05);
+        height: 48px;
+        box-shadow: 0 0 9px 0 rgba(255, 255, 255, 0.54);
+    }
+
+    .infosFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infosAboutStore {
+        width: 1250px;
+        gap: 113px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .socialIcons {
+        width: 248px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .shopLogoFooter {
+        width: 160px;
+        font-size: 33px;
+        font-weight: 1000;
+        padding-bottom: 25px;
+    }
+
+    .reviewFooter {
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        padding-bottom: 35px;
+        opacity: 60%;
+    }
+
+    .containerIcons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .icon:hover {
+        background-color: black;
+        transform: scale(1.1);
+        color: #FFFFFF;
+
+    }
+
+    .icon.facebook:hover {
+        background-color: black;
+        color: #FFFFFF;
+    }
+
+    .footerNav {
+        display: flex;
+        gap: 113px;
+    }
+
+    .containerFooterNav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titleFooterNav {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .listNav {
+        width: 140px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .optionFooterNav {
+        font-size: 16px;
+        line-height: 19px;
+        color: #00000099;
+        opacity: 60%;
+    }
+
+    .edgeToSeparate {
+        width: 100%;
+        margin: 50px 0 20px 0;
+        border: 1px solid #000000;
+        opacity: 10%;
+    }
+
+    .paymentMethods {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .review {
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+        opacity: 60%;
+        margin: 0;
+    }
+
+    .containerPayment {
+        display: flex;
+    }
+}

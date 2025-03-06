@@ -1,0 +1,149 @@
+@media screen and (max-width: 1080px) {
+    .containerClothes {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerArrivals {
+        width: 100%;
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .clothesSectionType {
+        color: black;
+        font-family: "Integral CF", sans-serif;
+        font-weight: 1000;
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .cardsContainer::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    .viewAllButton {
+        width: 358px;
+        padding: 13px 0;
+        border: 1px solid #c8c8c8;
+        background-color: white;
+        color: #000000;
+        border-radius: 62px;
+        margin-top: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .viewAllButton:hover {
+        width: 228px;
+        height: 58px;
+        background-color: #f1f1f1;
+        border-color: #1A1A1A;
+        box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -webkit-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -moz-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+    }
+
+    .viewAllButton:focus {
+        outline: none;
+        box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -webkit-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -moz-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+    }
+
+    .viewAllButton:active {
+        box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -webkit-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -moz-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .containerClothes {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerArrivals {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 1440px;
+        margin-top: 72px;
+        color: black;
+    }
+
+    .clothesSectionType {
+        color: black;
+        display: flex;
+        font-family: "Integral CF", sans-serif;
+        font-weight: 1000;
+        font-size: 48px;
+        line-height: 57px;
+    }
+
+    .cardsContainer {
+        width: 100%;
+        margin-top: 50px;
+        padding: 0 100px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .viewAllButton {
+        width: 218px;
+        height: 52px;
+        border: 1px solid #c8c8c8;
+        background-color: white;
+        color: #000000;
+        border-radius: 62px;
+        margin-top: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .viewAllButton:hover {
+        width: 228px;
+        height: 58px;
+        background-color: #f1f1f1;
+        border-color: #1A1A1A;
+        box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -webkit-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -moz-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+    }
+
+    .viewAllButton:focus {
+        outline: none;
+        box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -webkit-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -moz-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+    }
+
+    .viewAllButton:active {
+        box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -webkit-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+        -moz-box-shadow: 0 1px 10px 1px rgba(117, 117, 117, 0.88);
+    }
+}

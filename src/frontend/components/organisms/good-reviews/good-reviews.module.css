@@ -1,0 +1,200 @@
+@media screen and (max-width: 1080px) {
+    .containerHappyCustomers {
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .happyCustomers {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menuHappyCustomers {
+        width: 100%;
+        height: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .title {
+        width: 70%;
+        font-size: 32px;
+        line-height: 36px;
+        font-family: "Integral CF", sans-serif;
+        font-weight: 700;
+        color: black;
+    }
+
+    .titleCustomers {
+        font-family: "Integral CF", sans-serif;
+        font-weight: 700;
+        line-height: 36px;
+        font-size: 32px;
+    }
+
+    .arrowsHappyCustomers {
+        color: black;
+        width: 80px;
+        height: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        text-align: end;
+    }
+
+    .containerGoodReviews {
+        width: 100%;
+        margin-top: 24px;
+        gap: 20px;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .containerBoxReviews {
+        width: 358px;
+        height: 186px;
+        border: 1px solid #c8c8c8;
+        padding: 24px;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+
+    .dataReviewer {
+        width: 100%;
+        height: 20px;
+        margin-top: 12px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .titleReviewer {
+        font-family: 'Satoshi', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        color: black;
+    }
+
+    .reviewText {
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+        opacity: 60%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .containerHappyCustomers {
+        width: 100%;
+        margin-bottom: 80px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: black;
+    }
+
+    .happyCustomers {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .menuHappyCustomers {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 100px;
+        box-sizing: border-box;
+        height: 58px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: 48px;
+        line-height: 58px;
+        font-family: "Integral CF", sans-serif;
+        font-weight: 700;
+    }
+
+    .arrowsHappyCustomers {
+        height: 100%;
+        width: 54px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+    }
+
+    .arrowsHappyCustomers img {
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .cardReviews {
+        width: 400px;
+        height: 240px;
+        padding: 28px 32px;
+        box-sizing: border-box;
+        border: 1px solid #F0F0F0;
+        border-radius: 20px;
+        flex-shrink: 0;
+        transition: transform 0.5s ease;
+    }
+
+    .containerGoodReviews {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .dataReviewer {
+        display: flex;
+        width: 100%;
+        height: 24px;
+        gap: 4px;
+        margin: 15px 0;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .titleReviewer {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 22px;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .reviewText {
+        display: flex;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+        opacity: 60%;
+        margin: 0;
+    }
+
+}
