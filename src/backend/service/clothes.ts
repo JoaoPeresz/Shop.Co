@@ -6,6 +6,10 @@ class ClothesService {
     public async getAllClothes() {
         return await this.clothesRepository.findAll();
     }
+
+    public async findClotheById(id: string) {
+        return await this.clothesRepository.findClotheById(id);
+    }
 }
 
 export default ClothesService;

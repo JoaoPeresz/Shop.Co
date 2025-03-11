@@ -1,42 +1,43 @@
-import {Fragment, useEffect, useState} from "react";
+import { Fragment, useEffect, useState } from "react";
 import HomePageHeader from "@/src/frontend/components/organisms/home-page-header";
 import Footer from "@/src/frontend/components/organisms/footer";
-import styles from "./product-detail-page.module.css";
 import ClotheDetails from "@/src/frontend/components/organisms/clothe-details";
-import {findClotheById} from "@/api/axios/api-clothes";
+import styles from "./product-detail-page.module.css";
+import { findClotheById } from "@/api/axios/api-clothes";
 import ProductDTO from "@/src/models/products-dto";
-import {useParams} from "next/navigation";
 
-export default function ProductDetailPage () {
+type Props = {
+    clotheId: string;
+};
 
-    const { id } = useParams();
-    const [clothe, setClothe] = useState<ProductDTO | null>(null);
+export default function ProductDetailPage({ clotheId }: Props) {
+    const [clothe, setClothe] = useState<ProductDTO>();
 
     useEffect(() => {
-        console.log(id)
         const fetchClothe = async () => {
             try {
-                if (id) {
-                    const data = await findClotheById(id);
-                    setClothe(data);
+                if (clotheId) {
+                    const dataClothe = await findClotheById(clotheId);
+                    setClothe(dataClothe);
+                    // setClothe(dataClothe);
                 }
             } catch (error) {
-                console.error("Error fetching clothe:", error);
+                console.error("Erro ao buscar a roupa:", error);
             }
         };
 
         fetchClothe();
-    }, [id]);
+    }, [clotheId]);
 
     return (
         <Fragment>
             <div className={styles.container}>
                 <div className={styles.containerBox}>
-                    <HomePageHeader/>
-                    <ClotheDetails/>
-                    <Footer/>
+                    <HomePageHeader />
+                    <ClotheDetails clothe={clothe} />
+                    {/*<Footer />*/}
                 </div>
             </div>
         </Fragment>
-)
+    );
 }

@@ -13,7 +13,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(400).json({ success: false, message: "ID is required" });
         }
 
-        // Buscar ambas as imagens no mesmo query
         const result = await pool.query(
             "SELECT clothe_image, rating_image FROM clothes WHERE id = $1",
             [id]
@@ -23,7 +22,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(404).json({ success: false, message: "Images not found" });
         }
 
-        // Converter imagens bytea para base64
         const clotheImageBase64 = Buffer.from(result.rows[0].clothe_image).toString("base64");
         const ratingImageBase64 = Buffer.from(result.rows[0].rating_image).toString("base64");
 

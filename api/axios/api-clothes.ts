@@ -2,7 +2,7 @@ import {api} from "@/api/axios/api-axios";
 
 export const getAllClothes = async () => {
     try {
-        const response = await api.get("/api/clothes");
+        const response = await api.get("/api/all-clothes");
         return response.data;
     } catch (error) {
         console.error("Error fetching clothes:", error);
@@ -18,4 +18,4 @@ export const findClotheById = async (id: string) => {
         console.error("Clothing item not found for the provided ID:", error);
         throw error;
     }
-}
+};
