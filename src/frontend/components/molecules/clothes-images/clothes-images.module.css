@@ -1,0 +1,12 @@
+.container {
+    width: 50%;
+    height: 530px;
+    background-color: #83b60e;
+}
+
+.containerBox {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: auto;
+}

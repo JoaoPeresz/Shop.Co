@@ -159,7 +159,7 @@ export default function Footer() {
                     </section>
                 </section>
             </section>
-            <ToastContainer />
+            <ToastContainer/>
         </footer>
     );
 }

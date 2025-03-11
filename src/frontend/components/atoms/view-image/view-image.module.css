@@ -1,0 +1,8 @@
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2ab61d;
+    width: 444px;
+    height: 100%;
+}
