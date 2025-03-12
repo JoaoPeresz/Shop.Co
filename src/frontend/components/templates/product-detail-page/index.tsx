@@ -5,6 +5,8 @@ import styles from "./product-detail-page.module.css";
 import { findClotheById } from "@/api/axios/api-clothes";
 import ProductDTO from "@/src/models/products-dto";
 import { getClotheImages } from "@/api/axios/api-images";
+import AllReviews from "@/src/frontend/components/organisms/all-reviews";
+import {getAllReviews} from "@/api/axios/api-reviews";
 
 type Props = {
     clotheId: string;
@@ -36,6 +38,12 @@ export default function ProductDetailPage({ clotheId }: Props) {
 
                 setClotheImage(imagesMap);
                 setRatingImages(ratingsMap);
+
+                const dataReviews = await getAllReviews();
+
+                console.log(dataReviews,"mostrando");
+
+
             } catch (error) {
                 console.error("Erro ao buscar a roupa:", error);
             }
@@ -44,13 +52,13 @@ export default function ProductDetailPage({ clotheId }: Props) {
         fetchClothe();
     }, [clotheId]);
 
-
     return (
         <Fragment>
             <div className={styles.container}>
                 <div className={styles.containerBox}>
-                    <HomePageHeader />
+                    <HomePageHeader/>
                     <ClotheDetails clothe={clothe} ratingImage={ratingImages} />
+                    <AllReviews/>
                 </div>
             </div>
         </Fragment>
