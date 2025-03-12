@@ -1,26 +1,41 @@
 import { Fragment, useEffect, useState } from "react";
 import HomePageHeader from "@/src/frontend/components/organisms/home-page-header";
-import Footer from "@/src/frontend/components/organisms/footer";
 import ClotheDetails from "@/src/frontend/components/organisms/clothe-details";
 import styles from "./product-detail-page.module.css";
 import { findClotheById } from "@/api/axios/api-clothes";
 import ProductDTO from "@/src/models/products-dto";
+import { getClotheImages } from "@/api/axios/api-images";
 
 type Props = {
     clotheId: string;
 };
 
 export default function ProductDetailPage({ clotheId }: Props) {
-    const [clothe, setClothe] = useState<ProductDTO>();
+    const [clothe, setClothe] = useState<ProductDTO | null>(null);
+    const [clotheImage, setClotheImage] = useState<{ [id: string]: string }>({});
+    const [ratingImages, setRatingImages] = useState<{ [id: string]: string }>({});
 
     useEffect(() => {
         const fetchClothe = async () => {
             try {
-                if (clotheId) {
-                    const dataClothe = await findClotheById(clotheId);
-                    setClothe(dataClothe);
-                    // setClothe(dataClothe);
+                if (!clotheId) return;
+
+                const imagesMap: { [id: string]: string } = {};
+                const ratingsMap: { [id: string]: string } = {};
+
+                const dataClothe = await findClotheById(clotheId);
+                setClothe(dataClothe);
+
+                try {
+                    const { clotheImage, ratingImage } = await getClotheImages(clotheId);
+                    imagesMap[clotheId] = clotheImage;
+                    ratingsMap[clotheId] = ratingImage;
+                } catch (error) {
+                    console.error(`Erro ao buscar imagens para a roupa ${clotheId}:`, error);
                 }
+
+                setClotheImage(imagesMap);
+                setRatingImages(ratingsMap);
             } catch (error) {
                 console.error("Erro ao buscar a roupa:", error);
             }
@@ -29,13 +44,13 @@ export default function ProductDetailPage({ clotheId }: Props) {
         fetchClothe();
     }, [clotheId]);
 
+
     return (
         <Fragment>
             <div className={styles.container}>
                 <div className={styles.containerBox}>
                     <HomePageHeader />
-                    <ClotheDetails clothe={clothe} />
-                    {/*<Footer />*/}
+                    <ClotheDetails clothe={clothe} ratingImage={ratingImages} />
                 </div>
             </div>
         </Fragment>

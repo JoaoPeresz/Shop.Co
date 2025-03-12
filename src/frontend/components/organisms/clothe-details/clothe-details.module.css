@@ -5,6 +5,8 @@
 }
 
 .containerBox {
-    background-color: #FF3333;
-
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
 }

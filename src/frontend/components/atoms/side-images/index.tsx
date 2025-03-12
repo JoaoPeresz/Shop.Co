@@ -5,7 +5,6 @@ import imageFront from "../../../../../public/assets/product-details/image-front
 import imageBack from "../../../../../public/assets/product-details/image-back.png";
 import imagePerson from "../../../../../public/assets/product-details/people-image.png";
 
-// Tipagem das props
 interface SideImagesProps {
     onImageClick: (image: StaticImageData) => void;
 }
