@@ -1,0 +1,24 @@
+.containerFilters {
+    width: 100%;
+    height: 48px;
+}
+
+.counter {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 8px;
+}
+
+.allReviews {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    line-height: 100%;
+}
+
+.counterReview {
+    color: #00000099;
+    font-size: 16px;
+    line-height: 22px;
+}

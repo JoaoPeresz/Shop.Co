@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 152px;
+    height: 100%;
+}
+
+.containerBox {
+    background-color: #18b6a9;
+    width: 152px;
+    height: 167px;
+    border-radius: 20px;
+}
