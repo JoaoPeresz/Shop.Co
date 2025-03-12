@@ -1,0 +1,46 @@
+.addCartContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.addQuantityCounter {
+    width: 170px;
+    height: 52px;
+    border-radius: 50px;
+    background-color: #F0F0F0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.functionsButtons {
+    font-weight: 400;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.functionsButtons:hover {
+    color: #5a5151;
+}
+
+.quantity {
+    font-size: 18px;
+}
+
+.addCartButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 52px;
+    border-radius: 50px;
+    color: white;
+    background-color: black;
+}

@@ -1,9 +1,13 @@
-export default interface ProductsDTO {
-    image: string;
-    title: string;
-    ratingImage: string;
+export default interface ProductDTO {
+    id: string;
+    name: string;
+    description: string;
+    price: string;
+    discount: number;
+    discount_percentage: number;
+    is_arrival: boolean;
+    is_top_selling: boolean;
     rating: string;
-    price: number;
-    previous: number;
-    discount: string;
+    rating_image: BufferSource;
+    clothe_image: BufferSource;
 }

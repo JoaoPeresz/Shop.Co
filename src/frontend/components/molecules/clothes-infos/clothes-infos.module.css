@@ -1,0 +1,99 @@
+.infoContainer {
+    width: 50%;
+    height: 530px;
+}
+
+.clotheName {
+    font-family: "Integral CF", sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    height: 48px;
+    text-transform: uppercase;
+}
+
+.ratingContainer {
+    height: 25px;
+    margin-top: 14px;
+    display: flex;
+    gap: 16px;
+}
+
+.ratingImage {
+    width: 139px;
+    height: 25px;
+}
+
+.rating {
+    display: flex;
+    color: black;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.ratingMax {
+    color: #00000099;
+}
+
+.valuesContainer {
+    display: flex;
+    color: black;
+    gap: 12px;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 24px;
+    line-height: 32px;
+    color: black;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.previousPrice {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    line-height: 32px;
+    color: black;
+    opacity: 40%;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.containerDiscount {
+    width: 58px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    border-radius: 62px;
+    background-color: rgba(255, 51, 51, 0.1);
+}
+
+.discount {
+    color: #FF3333;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.discountContainer {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.description {
+    width: 100%;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    color: #00000099;
+}
+

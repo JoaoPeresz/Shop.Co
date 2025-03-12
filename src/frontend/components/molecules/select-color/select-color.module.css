@@ -1,0 +1,28 @@
+.colorContainer {
+    width: 100%;
+    align-items: start;
+    display: flex;
+    gap: 1rem;
+}
+
+.colorSelectionButton {
+    display: flex;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    transition: all 0.3s ease-in-out;
+    color: #FFFFFF;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.colorSelectionButton:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.selected {
+    transform: scale(1.10);
+}
