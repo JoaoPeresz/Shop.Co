@@ -10,20 +10,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
 
         const result = await pool.query(
-            "SELECT clothe_image, rating_image FROM clothes WHERE id = $1",
+            "SELECT rating_image FROM reviews WHERE id = $1",
             [id]
         );
 
-        if (result.rows.length === 0 || !result.rows[0].clothe_image || !result.rows[0].rating_image) {
+        if (result.rows.length === 0 || !result.rows[0].rating_image) {
             return res.status(404).json({ success: false, message: "Images not found" });
         }
 
-        const clotheImageBase64 = Buffer.from(result.rows[0].clothe_image).toString("base64");
         const ratingImageBase64 = Buffer.from(result.rows[0].rating_image).toString("base64");
 
         res.status(200).json({
             success: true,
-            clothe_image: `data:image/png;base64,${clotheImageBase64}`,
             rating_image: `data:image/png;base64,${ratingImageBase64}`
         });
 

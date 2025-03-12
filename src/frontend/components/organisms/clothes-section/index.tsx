@@ -8,10 +8,11 @@ type Props = {
     products: ProductsDTO[];
     clotheImage: { [id: string]: string };
     ratingImage: { [id: string]: string };
-    handlerProductDetails: (id: string) => void;
+    handlerProductDetails?: (id: string) => void;
+    buttonApears: boolean;
 }
 
-export default function ClothesSection ({title, products, clotheImage, ratingImage, handlerProductDetails}: Props) {
+export default function ClothesSection ({title, products, clotheImage, ratingImage, handlerProductDetails, buttonApears}: Props) {
 
     return (
         <Fragment>
@@ -30,7 +31,9 @@ export default function ClothesSection ({title, products, clotheImage, ratingIma
                             />
                         ))}
                     </div>
-                    <div className={styles.viewAllButton}>View All</div>
+                    {buttonApears &&
+                        <div className={styles.viewAllButton}>View All</div>
+                    }
                 </section>
             </section>
         </Fragment>

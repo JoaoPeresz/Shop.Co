@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1129</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1139</IntrospectionStateNumber>
       <ServerVersion>17.2</ServerVersion>
       <StartupTime>1741523548</StartupTime>
       <TimeZones>true ACDT
@@ -800,7 +800,7 @@ false Zulu
 14650||10|C|G
 14650||-9223372036854775808|U|G
 14650||10|U|G</Grants>
-      <IntrospectionStateNumber>1129</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1139</IntrospectionStateNumber>
       <ObjectId>352312</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4231,8 +4231,8 @@ false Zulu
     <schema id="266" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1129</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-03-12.01:31:10</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>1139</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-03-12.02:41:47</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4462,14 +4462,15 @@ false Zulu
       <TypeId>17</TypeId>
     </column>
     <column id="299" parent="270" name="id">
+      <DefaultExpression>gen_random_uuid()</DefaultExpression>
       <Position>1</Position>
-      <StateNumber>1128</StateNumber>
+      <StateNumber>1133</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
     <column id="300" parent="270" name="rating_image">
       <Position>2</Position>
-      <StateNumber>1128</StateNumber>
+      <StateNumber>1138</StateNumber>
       <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>

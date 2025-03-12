@@ -50,3 +50,13 @@
 .inactive {
     background-color: rgba(207, 207, 207, 0.6);
 }
+
+.reviews {
+    margin-top: 24px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+}

@@ -1,7 +1,16 @@
 import { Fragment, useState } from "react";
 import styles from "./float-tab-navigator.module.css";
+import ReviewsDTO from "@/src/models/reviews-dto";
+import CardReview from "@/src/frontend/components/molecules/card-review";
+import ReviewsFilters from "@/src/frontend/components/molecules/reviews-filters";
+import reviews from "@/src/backend/service/reviews";
 
-export default function FloatTabNavigator() {
+type Props = {
+    dataReviews?: ReviewsDTO[];
+    ratingImage: { [id: string]: string };
+}
+
+export default function FloatTabNavigator({dataReviews, ratingImage} : Props) {
     const [selectedTab, setSelectedTab] = useState("reviews");
 
     return (
@@ -34,7 +43,12 @@ export default function FloatTabNavigator() {
                 </div>
                 {selectedTab === "reviews" && (
                     <section className={styles.reviews}>
-
+                        <ReviewsFilters reviews={dataReviews} />
+                        {dataReviews && dataReviews.map((review, index) => (
+                            <div key={review.id}>
+                                <CardReview review={review} index={index} ratingImage={ratingImage}/>
+                            </div>
+                        ))}
                     </section>
                 )}
             </section>

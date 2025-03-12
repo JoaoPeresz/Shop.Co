@@ -4,7 +4,7 @@ import ProductsDTO from "@/src/models/products-dto";
 
 type Props = {
     index: number;
-    handlerProductDetails: (id: string) => void;
+    handlerProductDetails?: (id: string) => void;
     product: ProductsDTO;
     clotheImage: string;
     ratingImage: string;
@@ -13,7 +13,7 @@ type Props = {
 export default function ClothesCard ({ index, handlerProductDetails, product, clotheImage, ratingImage }: Props) {
     return (
         <Fragment>
-            <article key={index} onClick={() => handlerProductDetails(product.id)} className={styles.containerArrival}>
+            <article key={index} onClick={() => handlerProductDetails?.(product.id)} className={styles.containerArrival}>
                 <img
                     src={clotheImage}
                     alt={product.name}

@@ -70,6 +70,7 @@ const handlerProductDetails = (clotheID: string) => {
                         clotheImage={images}
                         ratingImage={ratingImages}
                         handlerProductDetails={handlerProductDetails}
+                        buttonApears={true}
                     />
                     <ClothesSection
                         title="TOP SELLING"
@@ -77,6 +78,7 @@ const handlerProductDetails = (clotheID: string) => {
                         clotheImage={images}
                         ratingImage={ratingImages}
                         handlerProductDetails={handlerProductDetails}
+                        buttonApears={true}
                     />
                     <BrowseStyle/>
                     <GoodReviews/>
