@@ -1,0 +1,24 @@
+.infos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.categoryType {
+    font: 700 32px/1.5 'Satoshi', sans-serif;
+}
+
+.dataClothes {
+    display: flex;
+    gap: 16px;
+    font-size: 16px;
+    color: #00000099;
+}
+
+.cardsContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

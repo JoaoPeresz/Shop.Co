@@ -1,0 +1,34 @@
+.navigate {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.containerButton {
+    font-family: 'Satoshi', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0000001A;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.containerButton:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+.containerButton:active {
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    transform: scale(0.98);
+}
+

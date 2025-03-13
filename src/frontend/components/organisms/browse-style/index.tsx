@@ -1,5 +1,6 @@
 import styles from "./browse-style.module.css";
 import {Fragment} from "react";
+import {useRouter} from "next/navigation";
 
 const topics = [
     {
@@ -20,7 +21,14 @@ const topics = [
     },
 ];
 
-export default function BrowseStyle() {
+export default function  BrowseStyle() {
+
+    const router = useRouter();
+
+const handlerViewStyles = (topic : string) => {
+    router.push(`/category-page/${topic}`);
+}
+
     return (
         <Fragment>
             <section className={styles.browseStyle}>
@@ -28,7 +36,7 @@ export default function BrowseStyle() {
                     <h1 className={styles.title}>BROWSE BY DRESS STYLE</h1>
                     <section className={styles.cardTopicsBrowse}>
                         {topics.map((topic, index) => (
-                            <section key={index} className={styles.containerTopics}>
+                            <section onClick={() => handlerViewStyles(topic.topic)} key={index} className={styles.containerTopics}>
                                 <img className={styles.topicImage} src={topic.image} alt={topic.topic} />
                                 <h2 className={styles.topic}>{topic.topic}</h2>
                             </section>
