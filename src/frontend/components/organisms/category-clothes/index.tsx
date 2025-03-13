@@ -5,10 +5,8 @@ import ClothesCard from "@/src/frontend/components/molecules/clothes-card";
 import ProductDTO from "@/src/models/products-dto";
 import ClothesNavigation from "@/src/frontend/components/molecules/clothes-navigation";
 import ClothesSortCount from "@/src/frontend/components/molecules/clothes-sort-count";
-import TuneIcon from '@mui/icons-material/Tune';
-import IconArrowRigth from "@/src/frontend/components/atoms/icon-arrow-rigth";
 import LineBar from "@/src/frontend/components/atoms/line-bar";
-import PriceFilter from "@/src/frontend/components/atoms/price-filter";
+import ClothesFilter from "src/frontend/components/organisms/clothes-filter";
 
 type Props = {
     categoryType: string;
@@ -24,10 +22,17 @@ export default function CategoryClothes({
                                             ratingImage,
                                         }: Props) {
     const [priceRange, setPriceRange] = useState<number[]>([0, 350]);
+    const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-    const filteredClothes = clothes.filter(product =>
+    let filteredClothes = clothes.filter(product =>
         Number(product.price) >= priceRange[0] && Number(product.price) <= priceRange[1]
     );
+
+    if (selectedTypes.length > 0) {
+        filteredClothes = filteredClothes.filter(product =>
+            selectedTypes.includes(product.clothe_type)
+        );
+    }
 
     const itemsPerPage = 9;
     const [currentPage, setCurrentPage] = useState(1);
@@ -36,22 +41,28 @@ export default function CategoryClothes({
     const endIndex = currentPage * itemsPerPage;
     const currentClothes = filteredClothes.slice(startIndex, endIndex);
 
+    const toggleTypeSelection = (type: string) => {
+        setSelectedTypes(prevTypes =>
+            prevTypes.includes(type) ? (
+                prevTypes.filter(t => t !== type)
+            ) : (
+                [...prevTypes, type]
+            )
+        );
+    };
+
     return (
         <Fragment>
             <section className={styles.container}>
                 <CategoryNavigation categoryType={categoryType} />
                 <section className={styles.categoryArea}>
-                    <section className={styles.containerFilters}>
-                        <section className={styles.filterTitle}>
-                            Filters <TuneIcon fontSize={'large'} style={{ color: '#00000066', cursor: 'pointer' }}/>
-                        </section>
-                        <LineBar />
-                        <section className={styles.filterClotheType}>
-                            {categoryType} <IconArrowRigth />
-                        </section>
-                        <LineBar />
-                        <PriceFilter onPriceChange={setPriceRange} currentRange={priceRange} />
-                    </section>
+                    <ClothesFilter
+                        clothes={clothes}
+                        toggleTypeSelection={toggleTypeSelection}
+                        selectedTypes={selectedTypes}
+                        setPriceRange={setPriceRange}
+                        priceRange={priceRange}
+                    />
                     <section className={styles.containerAllClothes}>
                         <ClothesSortCount
                             categoryType={categoryType}

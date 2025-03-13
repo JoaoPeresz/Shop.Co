@@ -1,0 +1,36 @@
+.filterClotheType {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+    color: #00000099;
+}
+
+.filterType {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filterType:hover {
+    background-color: #00000010;
+}
+
+.filterType:active {
+    transform: scale(0.95);
+}
+
+.selected {
+    background-color: #e0e0e0;
+    color: #333333;
+    font-weight: bold;
+}
+
+

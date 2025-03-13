@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1139</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>1174</IntrospectionStateNumber>
       <ServerVersion>17.2</ServerVersion>
-      <StartupTime>1741523548</StartupTime>
+      <StartupTime>1741883021</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -800,7 +808,7 @@ false Zulu
 14650||10|C|G
 14650||-9223372036854775808|U|G
 14650||10|U|G</Grants>
-      <IntrospectionStateNumber>1139</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1174</IntrospectionStateNumber>
       <ObjectId>352312</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4231,8 +4239,8 @@ false Zulu
     <schema id="266" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1139</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-03-12.02:41:47</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>1174</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-03-13.18:25:34</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4251,7 +4259,7 @@ false Zulu
     </table>
     <table id="269" parent="266" name="clothes">
       <ObjectId>352335</ObjectId>
-      <StateNumber>1122</StateNumber>
+      <StateNumber>1173</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4461,32 +4469,45 @@ false Zulu
       <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
-    <column id="299" parent="270" name="id">
+    <column id="299" parent="269" name="might_like">
+      <DefaultExpression>false</DefaultExpression>
+      <Position>12</Position>
+      <StateNumber>1165</StateNumber>
+      <StoredType>boolean|0s</StoredType>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="300" parent="269" name="clothe_type">
+      <Position>13</Position>
+      <StateNumber>1173</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="301" parent="270" name="id">
       <DefaultExpression>gen_random_uuid()</DefaultExpression>
       <Position>1</Position>
       <StateNumber>1133</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="300" parent="270" name="rating_image">
+    <column id="302" parent="270" name="rating_image">
       <Position>2</Position>
       <StateNumber>1138</StateNumber>
       <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
-    <column id="301" parent="270" name="user_name">
+    <column id="303" parent="270" name="user_name">
       <Position>3</Position>
       <StateNumber>1128</StateNumber>
       <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="302" parent="270" name="description">
+    <column id="304" parent="270" name="description">
       <Position>4</Position>
       <StateNumber>1128</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="303" parent="270" name="review_date">
+    <column id="305" parent="270" name="review_date">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>1128</StateNumber>

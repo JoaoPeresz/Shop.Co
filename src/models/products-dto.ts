@@ -1,6 +1,7 @@
 export default interface ProductDTO {
     id: string;
     name: string;
+    clothe_type: string;
     description: string;
     price: string;
     discount: number;

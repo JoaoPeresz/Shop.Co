@@ -13,28 +13,6 @@
     margin-top: 24px;
 }
 
-.containerFilters {
-    width: 23.79%;
-    border: 1px solid #00b621;
-    border-radius: 20px;
-    padding: 20px 24px;
-    box-sizing: border-box;
-}
-
-.filterTitle {
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-}
-
-.filterClotheType {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    color: #00000099;
-}
-
 .containerAllClothes {
     width: 74.6%;
     display: flex;
@@ -54,6 +32,6 @@
 .cardsContainerBox {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     gap: 20px;
 }
