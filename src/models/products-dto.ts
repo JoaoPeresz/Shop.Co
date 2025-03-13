@@ -10,6 +10,7 @@ export default interface ProductDTO {
     is_top_selling: boolean;
     might_like: boolean;
     rating: string;
+    color: string;
     rating_image: BufferSource;
     clothe_image: BufferSource;
 }

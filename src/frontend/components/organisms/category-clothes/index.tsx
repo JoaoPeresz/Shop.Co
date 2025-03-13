@@ -23,6 +23,7 @@ export default function CategoryClothes({
                                         }: Props) {
     const [priceRange, setPriceRange] = useState<number[]>([0, 350]);
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+    const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
     let filteredClothes = clothes.filter(product =>
         Number(product.price) >= priceRange[0] && Number(product.price) <= priceRange[1]
@@ -31,6 +32,12 @@ export default function CategoryClothes({
     if (selectedTypes.length > 0) {
         filteredClothes = filteredClothes.filter(product =>
             selectedTypes.includes(product.clothe_type)
+        );
+    }
+
+    if (selectedColors.length > 0) {
+        filteredClothes = filteredClothes.filter(product =>
+            selectedColors.some(color => product.color.toLowerCase() === color.toLowerCase())
         );
     }
 
@@ -43,11 +50,13 @@ export default function CategoryClothes({
 
     const toggleTypeSelection = (type: string) => {
         setSelectedTypes(prevTypes =>
-            prevTypes.includes(type) ? (
-                prevTypes.filter(t => t !== type)
-            ) : (
-                [...prevTypes, type]
-            )
+            prevTypes.includes(type) ? prevTypes.filter(t => t !== type) : [...prevTypes, type]
+        );
+    };
+
+    const toggleColorSelection = (color: string) => {
+        setSelectedColors(prev =>
+            prev.includes(color) ? prev.filter(c => c !== color) : [...prev, color]
         );
     };
 
@@ -62,6 +71,8 @@ export default function CategoryClothes({
                         selectedTypes={selectedTypes}
                         setPriceRange={setPriceRange}
                         priceRange={priceRange}
+                        selectedColors={selectedColors}
+                        toggleColorSelection={toggleColorSelection}
                     />
                     <section className={styles.containerAllClothes}>
                         <ClothesSortCount

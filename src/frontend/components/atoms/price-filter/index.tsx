@@ -30,6 +30,8 @@ export default function PriceFilter({ onPriceChange, currentRange }: PriceFilter
                     border: "none",
                     boxShadow: "none",
                     "&::before": { display: "none" },
+                    marginBottom: '-12px',
+                    marginTop: '-12px'
                 }}
             >
                     <AccordionSummary
@@ -94,7 +96,7 @@ export default function PriceFilter({ onPriceChange, currentRange }: PriceFilter
                                         color: "black",
                                         fontWeight: "bold",
                                         fontSize: "14px",
-                                        transform: "translateY(36px)",
+                                        transform: "translateY(37px)",
                                     },
                                 }}
                             />
