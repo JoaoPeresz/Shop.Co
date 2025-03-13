@@ -5,14 +5,14 @@ import ProductDTO from "@/src/models/products-dto";
 
 type Props = {
     categoryType: string;
-    clotes: ProductDTO[];
+    clothes: ProductDTO[];
     currentPage: number;
     itemsPerPage: number;
 };
 
-export default function ClothesSortCount({ categoryType, clotes, currentPage, itemsPerPage }: Props) {
+export default function ClothesSortCount({ categoryType, clothes, currentPage, itemsPerPage }: Props) {
     const start = (currentPage - 1) * itemsPerPage + 1;
-    const end = Math.min(currentPage * itemsPerPage, clotes.length);
+    const end = Math.min(currentPage * itemsPerPage, clothes.length);
 
     return (
         <Fragment>
@@ -20,7 +20,7 @@ export default function ClothesSortCount({ categoryType, clotes, currentPage, it
                 <h1 className={styles.categoryType}>{categoryType}</h1>
                 <section className={styles.dataClothes}>
                     <h3>
-                        Showing {start}-{end} of {clotes.length} Products
+                        Showing {start} - {end} of {clothes.length} Products
                     </h3>
                     <h3>
                         Sort by:

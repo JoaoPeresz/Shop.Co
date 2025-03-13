@@ -14,23 +14,11 @@ type Props = {
 
 export default function CategoryPage({categoryType} : Props) {
 
-    const [clotes, setClotes] = useState<ProductDTO[]>([])
+    const [clotes, setclotes] = useState<ProductDTO[]>([])
     const [images, setImages] = useState<{ [id: string]: string }>({});
     const [ratingImages, setRatingImages] = useState<{ [id: string]: string }>({});
 
     useEffect(() => {
-        // const fetchClothes = async () => {
-        //     try {
-        //         const dataClothes = await getAllClothes();
-        //         console.log(dataClothes);
-        //         setClotes(dataClothes)
-        //     } catch (error) {
-        //         console.error("Error fetching clothes:", error);
-        //     }
-        // }
-        //
-        // fetchClothes();
-
         const fetchClothes = async () => {
             try {
                 const dataClothes = await getAllClothes();
@@ -53,7 +41,7 @@ export default function CategoryPage({categoryType} : Props) {
                 setImages(imagesMap);
                 setRatingImages(ratingsMap);
 
-                setClotes(dataClothes)
+                setclotes(dataClothes)
             } catch (error) {
                 console.error("Error fetching clothes:", error);
             }
@@ -70,7 +58,7 @@ export default function CategoryPage({categoryType} : Props) {
                     <div className={styles.bottomBar}/>
                     <CategoryClothes
                         categoryType={categoryType}
-                        clotes={clotes}
+                        clothes={clotes}
                         clotheImage={images}
                         ratingImage={ratingImages}
                     />
