@@ -17,6 +17,8 @@ export default function CategoryPage({categoryType} : Props) {
     const [clotes, setclotes] = useState<ProductDTO[]>([])
     const [images, setImages] = useState<{ [id: string]: string }>({});
     const [ratingImages, setRatingImages] = useState<{ [id: string]: string }>({});
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchClothes = async () => {
@@ -44,6 +46,8 @@ export default function CategoryPage({categoryType} : Props) {
                 setclotes(dataClothes)
             } catch (error) {
                 console.error("Error fetching clothes:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -57,6 +61,7 @@ export default function CategoryPage({categoryType} : Props) {
                     <HomePageHeader/>
                     <div className={styles.bottomBar}/>
                     <CategoryClothes
+                        loading={loading}
                         categoryType={categoryType}
                         clothes={clotes}
                         clotheImage={images}

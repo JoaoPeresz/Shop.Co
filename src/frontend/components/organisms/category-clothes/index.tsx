@@ -8,12 +8,14 @@ import ClothesSortCount from "@/src/frontend/components/molecules/clothes-sort-c
 import LineBar from "@/src/frontend/components/atoms/line-bar";
 import ClothesFilter from "src/frontend/components/organisms/clothes-filter";
 import { useRouter } from "next/navigation";
+import Skeleton from "@mui/material/Skeleton";
 
 type Props = {
     categoryType: string;
     clothes: ProductDTO[];
     clotheImage: { [id: string]: string };
     ratingImage: { [id: string]: string };
+    loading: boolean;
 };
 
 export default function CategoryClothes({
@@ -21,6 +23,7 @@ export default function CategoryClothes({
                                             clothes,
                                             clotheImage,
                                             ratingImage,
+                                            loading
                                         }: Props) {
     const [isDesktop, setIsDesktop] = useState<boolean>(true);
 
@@ -171,23 +174,45 @@ export default function CategoryClothes({
                             currentPage={currentPage}
                             itemsPerPage={itemsPerPage}
                         />
-                        <section className={styles.cardsContainer}>
-                            <section className={styles.cardsContainerBox}>
-                                {currentClothes.map((product, index) => (
-                                    <ClothesCard
-                                        ratingImage={ratingImage[product.id]}
-                                        key={product.id}
-                                        handlerProductDetails={() => {
-                                            router.push(`/product-details/${product.id}`)
-                                        }}
-
-                                        index={index}
-                                        product={product}
-                                        clotheImage={clotheImage[product.id]}
-                                    />
-                                ))}
+                        {loading ? (
+                            <section className={styles.containerSkeleton}>
+                                <div className={styles.skeletonGrid}>
+                                    {Array.from(new Array(9)).map((_, index) => (
+                                        <div key={index} className={styles.skeletonCard}>
+                                            <Skeleton
+                                                variant="rectangular"
+                                                sx={{
+                                                    width: '295px',
+                                                    height: '298px',
+                                                    borderRadius: '8px'
+                                                }}
+                                            />
+                                            <Skeleton width="120px" height={27} sx={{mt: 1}}/>
+                                            <Skeleton width="100px" height={27} sx={{mt: 1}}/>
+                                            <Skeleton width="80px" height={19}/>
+                                        </div>
+                                    ))}
+                                </div>
                             </section>
-                        </section>
+                        ) : (
+                            <section className={styles.cardsContainer}>
+                                <section className={styles.cardsContainerBox}>
+                                    {currentClothes.map((product, index) => (
+                                        <ClothesCard
+                                            ratingImage={ratingImage[product.id]}
+                                            key={product.id}
+                                            handlerProductDetails={() => {
+                                                router.push(`/product-details/${product.id}`)
+                                            }}
+
+                                            index={index}
+                                            product={product}
+                                            clotheImage={clotheImage[product.id]}
+                                        />
+                                    ))}
+                                </section>
+                            </section>
+                        )}
                         <div className={styles.bottomBar}/>
                         <LineBar/>
                         <ClothesNavigation

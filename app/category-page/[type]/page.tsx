@@ -16,7 +16,7 @@ export default function Category () {
     }, [params]);
 
     if (!categoryType) {
-        return <p>Carregando...</p>;
+        return;
     }
 
     return (
