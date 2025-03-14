@@ -87,7 +87,7 @@ export default function ProductDetailPage({ clotheId }: Props) {
                     setImages(imagesMap);
                     setRatingImages(ratingsMap);
 
-                    setAlsoLikeClothes(dataClothes.filter((clothe: ProductsDTO) => clothe.is_arrival && clothe.is_top_selling))
+                    setAlsoLikeClothes(dataClothes.filter((clothe: ProductsDTO) => clothe.might_like ))
                 } catch (error) {
                     console.error("Error fetching clothes:", error);
                 }

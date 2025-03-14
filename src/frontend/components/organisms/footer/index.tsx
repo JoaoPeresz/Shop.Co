@@ -13,7 +13,7 @@ interface Options {
 
 export default function Footer() {
     const [email, setEmail] = useState("");
-    const [emails, setEmails] = useState<string[]>([]); // Lista de emails registrados
+    const [emails, setEmails] = useState<string[]>([]);
 
     const handleSubscribe = () => {
         const trimmedEmail = email.trim();
@@ -150,11 +150,11 @@ export default function Footer() {
                     <section className={styles.paymentMethods}>
                         <h2 className={styles.review}>Shop.co © 2000-2023, All Rights Reserved</h2>
                         <section className={styles.containerPayment}>
-                            <img src="assets/home-page/visa.png" alt="payment" />
-                            <img src="assets/home-page/mastercard.png" alt="payment" />
-                            <img src="assets/home-page/paypal.png" alt="payment" />
-                            <img src="assets/home-page/apple-pay.png" alt="payment" />
-                            <img src="assets/home-page/google-pay.png" alt="payment" />
+                            <img src="/assets/home-page/visa.png" alt="payment" />
+                            <img src="/assets/home-page/mastercard.png" alt="payment" />
+                            <img src="/assets/home-page/paypal.png" alt="payment" />
+                            <img src="/assets/home-page/apple-pay.png" alt="payment" />
+                            <img src="/assets/home-page/google-pay.png" alt="payment" />
                         </section>
                     </section>
                 </section>
