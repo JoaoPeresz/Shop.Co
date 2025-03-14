@@ -1,7 +1,21 @@
-.image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 444px;
-    height: 100%;
+
+@media (max-width: 1080px) {
+    .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 358px;
+        height: 290px;
+        margin: 36px 0 56px 0;
+    }
+}
+
+@media (min-width: 1081px) {
+    .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 444px;
+        height: 100%;
+    }
 }

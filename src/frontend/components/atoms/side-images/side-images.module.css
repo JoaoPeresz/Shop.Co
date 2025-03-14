@@ -1,14 +1,29 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 152px;
-    height: 100%;
+@media (max-width: 1080px) {
+    .container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .containerBox {
+        width: 111px;
+        height: 106px;
+        border-radius: 20px;
+    }
 }
 
-.containerBox {
-    background-color: #18b6a9;
-    width: 152px;
-    height: 167px;
-    border-radius: 20px;
+@media (min-width: 1081px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 152px;
+        height: 100%;
+    }
+
+    .containerBox {
+        width: 152px;
+        height: 167px;
+        border-radius: 20px;
+    }
 }

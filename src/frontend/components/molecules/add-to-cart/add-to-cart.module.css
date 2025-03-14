@@ -1,46 +1,98 @@
-.addCartContainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+@media (max-width: 1080px) {
+    .addCartContainer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .addQuantityCounter {
+        width: 110px;
+        height: 44px;
+        border-radius: 50px;
+        background-color: #F0F0F0;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 12px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .functionsButtons {
+        font-weight: 400;
+        font-size: 32px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .functionsButtons:hover {
+        color: #5a5151;
+    }
+
+    .quantity {
+        font-size: 18px;
+    }
+
+    .addCartButton {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 236px;
+        height: 44px;
+        border-radius: 50px;
+        color: white;
+        background-color: black;
+    }
 }
 
-.addQuantityCounter {
-    width: 170px;
-    height: 52px;
-    border-radius: 50px;
-    background-color: #F0F0F0;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 38px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+@media (min-width: 1081px) {
+    .addCartContainer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .addQuantityCounter {
+        width: 170px;
+        height: 52px;
+        border-radius: 50px;
+        background-color: #F0F0F0;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 38px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
 
-.functionsButtons {
-    font-weight: 400;
-    font-size: 32px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
+    .functionsButtons {
+        font-weight: 400;
+        font-size: 32px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
 
-.functionsButtons:hover {
-    color: #5a5151;
-}
+    .functionsButtons:hover {
+        color: #5a5151;
+    }
 
-.quantity {
-    font-size: 18px;
-}
+    .quantity {
+        font-size: 18px;
+    }
 
-.addCartButton {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 52px;
-    border-radius: 50px;
-    color: white;
-    background-color: black;
+    .addCartButton {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 52px;
+        border-radius: 50px;
+        color: white;
+        background-color: black;
+    }
 }
