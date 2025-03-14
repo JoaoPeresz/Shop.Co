@@ -1,55 +1,115 @@
-.containerReview {
-    width: 610px;
-    height: 242px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #0000001A;
-    border-radius: 20px;
-    padding: 28px 32px;
-    box-sizing: border-box;
+@media (max-width: 1080px) {
+    .containerReview {
+        width: 358px;
+        height: 224px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        padding: 28px 32px;
+        box-sizing: border-box;
+    }
+
+    .dataReview {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 140px;
+    }
+
+    .ratingImage {
+        height: 22px;
+        width: 120px;
+    }
+
+    .userContainer {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: bold;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+    }
+
+    .description {
+        color: #00000099;
+        font-size: 16px;
+        line-height: 22px;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .periodContainer {
+        width: 100%;
+        height: 22px;
+        font-family: 'Satoshi', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        color: #00000099;
+    }
 }
 
-.dataReview {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 140px;
-}
+@media (min-width: 1081px) {
+    .containerReview {
+        width: 610px;
+        height: 242px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #0000001A;
+        border-radius: 20px;
+        padding: 28px 32px;
+        box-sizing: border-box;
+    }
 
-.ratingImage {
-    height: 22px;
-    width: 120px;
-}
+    .dataReview {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 140px;
+    }
 
-.userContainer {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: flex-start;
-}
+    .ratingImage {
+        height: 22px;
+        width: 120px;
+    }
 
-.title {
-    font-size: 20px;
-    line-height: 22px;
-    font-weight: bold;
-    font-family: 'Satoshi', sans-serif;
-    color: black;
-}
+    .userContainer {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: flex-start;
+    }
 
-.description {
-    color: #00000099;
-    font-size: 16px;
-    line-height: 22px;
-    font-family: 'Satoshi', sans-serif;
-}
+    .title {
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: bold;
+        font-family: 'Satoshi', sans-serif;
+        color: black;
+    }
 
-.periodContainer {
-    width: 100%;
-    height: 22px;
-    font-family: 'Satoshi', sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-    color: #00000099;
+    .description {
+        color: #00000099;
+        font-size: 16px;
+        line-height: 22px;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .periodContainer {
+        width: 100%;
+        height: 22px;
+        font-family: 'Satoshi', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        color: #00000099;
+    }
 }

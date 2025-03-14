@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState } from "react";
 import ProductDetailPage from "@/src/frontend/components/templates/product-detail-page";
-import { useParams } from "next/navigation"; // Use para capturar os params dinamicamente
+import { useParams } from "next/navigation";
 
 export default function ProductDetails() {
     const params = useParams(); // useParams agora retorna uma Promise

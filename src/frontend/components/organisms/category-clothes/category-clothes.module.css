@@ -58,49 +58,6 @@
         flex-direction: column;
     }
 
-    .containerSkeleton {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .skeletonContainer {
-        width: 100%;
-        background-color: #b62e23;
-        padding: 20px;
-        display: flex;
-    }
-
-    .skeletonGrid {
-        margin-top: 48px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-
-
-    .skeletonCard {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .alsoLikeSection {
-        margin-top: 40px;
-    }
-
-    .sectionTitle {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        padding: 0 20px;
-    }
-
     .cardsContainer {
         display: flex;
         align-items: flex-start;
