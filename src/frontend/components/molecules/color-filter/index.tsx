@@ -13,11 +13,11 @@ type ColorFilterProps = {
 };
 
 export default function ColorFilter({ selectedColors, toggleColorSelection }: ColorFilterProps) {
-    // Array com 10 opções fixas, mapeando o valor do banco ("db") para a cor exibida ("ui")
+    // Mapeamento fixo: valor do banco ("db") para o botão e cor exibida ("ui")
     const uiColors = [
         { db: "Black", ui: "black" },
         { db: "White", ui: "white" },
-        { db: "Orange", ui: "#F5DD06" },
+        { db: "Yellow", ui: "#F5DD06" },
         { db: "Dark-blue", ui: "#063AF5" },
         { db: "Light-blue", ui: "#06CAF5" },
         { db: "Orange", ui: "#F57906" },
@@ -95,7 +95,7 @@ export default function ColorFilter({ selectedColors, toggleColorSelection }: Co
                                         top: '50%',
                                         left: '50%',
                                         transform: 'translate(-50%, -50%)',
-                                        color: 'white'
+                                        color: colorOption.db === "White" ? "black" : 'white'
                                     }}
                                 />
                             )}

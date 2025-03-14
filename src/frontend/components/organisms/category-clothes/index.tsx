@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import styles from "./category-clothes.module.css";
 import CategoryNavigation from "@/src/frontend/components/molecules/category-navigation";
 import ClothesCard from "@/src/frontend/components/molecules/clothes-card";
@@ -21,44 +21,64 @@ export default function CategoryClothes({
                                             clotheImage,
                                             ratingImage,
                                         }: Props) {
-    const [priceRange, setPriceRange] = useState<number[]>([0, 350]);
-    const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-    const [selectedColors, setSelectedColors] = useState<string[]>([]);
+    const [internalPriceRange, setInternalPriceRange] = useState<number[]>([0, 350]);
+    const [internalSelectedTypes, setInternalSelectedTypes] = useState<string[]>([]);
+    const [internalSelectedColors, setInternalSelectedColors] = useState<string[]>([]);
+
+    const [appliedPriceRange, setAppliedPriceRange] = useState<number[]>([0, 350]);
+    const [appliedSelectedTypes, setAppliedSelectedTypes] = useState<string[]>([]);
+    const [appliedSelectedColors, setAppliedSelectedColors] = useState<string[]>([]);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9;
+
+    const handlerApplyFilters = () => {
+        console.log("entrando")
+        setAppliedPriceRange(internalPriceRange);
+        setAppliedSelectedTypes(internalSelectedTypes);
+        setAppliedSelectedColors(internalSelectedColors);
+        setCurrentPage(1);
+    };
 
     let filteredClothes = clothes.filter(product =>
-        Number(product.price) >= priceRange[0] && Number(product.price) <= priceRange[1]
+        Number(product.price) >= appliedPriceRange[0] &&
+        Number(product.price) <= appliedPriceRange[1]
     );
 
-    if (selectedTypes.length > 0) {
+    if (appliedSelectedTypes.length > 0) {
         filteredClothes = filteredClothes.filter(product =>
-            selectedTypes.includes(product.clothe_type)
+            appliedSelectedTypes.includes(product.clothe_type)
         );
     }
 
-    if (selectedColors.length > 0) {
+    if (appliedSelectedColors.length > 0) {
         filteredClothes = filteredClothes.filter(product =>
-            selectedColors.some(color => product.color.toLowerCase() === color.toLowerCase())
+            appliedSelectedColors.some(color =>
+                product.color.toLowerCase() === color.toLowerCase()
+            )
         );
     }
-
-    const itemsPerPage = 9;
-    const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(filteredClothes.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = currentPage * itemsPerPage;
-    const currentClothes = filteredClothes.slice(startIndex, endIndex);
 
     const toggleTypeSelection = (type: string) => {
-        setSelectedTypes(prevTypes =>
-            prevTypes.includes(type) ? prevTypes.filter(t => t !== type) : [...prevTypes, type]
+        setInternalSelectedTypes(prevTypes =>
+            prevTypes.includes(type)
+                ? prevTypes.filter(t => t !== type)
+                : [...prevTypes, type]
         );
     };
 
     const toggleColorSelection = (color: string) => {
-        setSelectedColors(prev =>
-            prev.includes(color) ? prev.filter(c => c !== color) : [...prev, color]
+        setInternalSelectedColors(prev =>
+            prev.includes(color)
+                ? prev.filter(c => c !== color)
+                : [...prev, color]
         );
     };
+
+    const totalPages = Math.ceil(filteredClothes.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = currentPage * itemsPerPage;
+    const currentClothes = filteredClothes.slice(startIndex, endIndex);
 
     return (
         <Fragment>
@@ -68,11 +88,12 @@ export default function CategoryClothes({
                     <ClothesFilter
                         clothes={clothes}
                         toggleTypeSelection={toggleTypeSelection}
-                        selectedTypes={selectedTypes}
-                        setPriceRange={setPriceRange}
-                        priceRange={priceRange}
-                        selectedColors={selectedColors}
+                        selectedTypes={internalSelectedTypes}
+                        setPriceRange={setInternalPriceRange}
+                        priceRange={internalPriceRange}
+                        selectedColors={internalSelectedColors}
                         toggleColorSelection={toggleColorSelection}
+                        handlerApplyFilters={handlerApplyFilters}
                     />
                     <section className={styles.containerAllClothes}>
                         <ClothesSortCount
