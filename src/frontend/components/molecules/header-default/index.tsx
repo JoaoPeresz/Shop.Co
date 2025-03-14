@@ -5,8 +5,11 @@ import IconArrowDonw from "@/src/frontend/components/atoms/icon-arrow-donw";
 import IconShoppingCart from "@/src/frontend/components/atoms/icon-shopping-cart";
 import IconProfile from "@/src/frontend/components/atoms/icon-profile";
 import IconSearch from "src/frontend/components/atoms/icon-search";
+import {useRouter} from "next/navigation";
 
 export default function HeaderDefault () {
+    const router = useRouter();
+
     return (
         <Fragment>
             <header className={styles.containerHeader}>
@@ -14,7 +17,7 @@ export default function HeaderDefault () {
                     <div className={styles.menuIcon}>
                         <IconMenu/>
                     </div>
-                    <h1 className={styles.shopLogo}>SHOP.CO</h1>
+                    <h1 className={styles.shopLogo} onClick={()=>router.push('/')}>SHOP.CO</h1>
                     <nav className={styles.menu}>
                         <ul className={styles.menuList}>
                             <li className={styles.menuItem}>

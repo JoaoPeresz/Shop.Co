@@ -1,0 +1,15 @@
+.navigate {
+    font-size: 18px;
+    display: flex;
+    width: 132px;
+    height: 22px;
+    gap: 4px;
+}
+
+.home {
+    color: #00000099;
+}
+
+.navigate > * {
+    cursor: pointer;
+}

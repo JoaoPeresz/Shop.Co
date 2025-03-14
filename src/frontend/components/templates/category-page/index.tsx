@@ -1,24 +1,22 @@
 import {Fragment, useEffect, useState} from "react";
-import styles from "./home-page.module.css"
-import HomePageHeader from "@/src/frontend/components/organisms/home-page-header";
-import HomePageBanner from "@/src/frontend/components/organisms/home-page-banner";
-import Brands from "@/src/frontend/components/organisms/brands";
-import ClothesSection from "src/frontend/components/organisms/clothes-section";
-import ProductsDTO from "@/src/models/products-dto";
-import BrowseStyle from "@/src/frontend/components/organisms/browse-style";
-import GoodReviews from "@/src/frontend/components/organisms/good-reviews";
+import styles from "./category-page.module.css"
 import Footer from "@/src/frontend/components/organisms/footer";
+import HomePageHeader from "@/src/frontend/components/organisms/home-page-header";
+import CategoryClothes from "@/src/frontend/components/organisms/category-clothes";
 import {getAllClothes} from "@/api/axios/api-clothes";
+import ProductDTO from "@/src/models/products-dto";
+import ProductsDTO from "@/src/models/products-dto";
 import {getClotheImages} from "@/api/axios/api-images";
-import { useRouter } from "next/navigation";
 
-export default function HomePage() {
-    const [arrivals, setArrivals] = useState<ProductsDTO[]>([]);
-    const [topSellings, setTopSellings] = useState<ProductsDTO[]>([]);
+type Props = {
+    categoryType: string;
+}
+
+export default function CategoryPage({categoryType} : Props) {
+
+    const [clotes, setclotes] = useState<ProductDTO[]>([])
     const [images, setImages] = useState<{ [id: string]: string }>({});
     const [ratingImages, setRatingImages] = useState<{ [id: string]: string }>({});
-
-    const router = useRouter();
 
     useEffect(() => {
         const fetchClothes = async () => {
@@ -43,8 +41,7 @@ export default function HomePage() {
                 setImages(imagesMap);
                 setRatingImages(ratingsMap);
 
-                setArrivals(dataClothes.filter((clothe: ProductsDTO) => clothe.is_arrival));
-                setTopSellings(dataClothes.filter((clothe: ProductsDTO) => clothe.is_top_selling));
+                setclotes(dataClothes)
             } catch (error) {
                 console.error("Error fetching clothes:", error);
             }
@@ -53,38 +50,21 @@ export default function HomePage() {
         fetchClothes();
     }, []);
 
-const handlerProductDetails = (clotheID: string) => {
-    router.push(`/product-details/${clotheID}`)
-}
-
     return (
         <Fragment>
             <section className={styles.container}>
                 <section className={styles.containerBox}>
                     <HomePageHeader/>
-                    <HomePageBanner/>
-                    <Brands/>
-                    <ClothesSection
-                        title="NEW ARRIVALS"
-                        products={arrivals}
+                    <div className={styles.bottomBar}/>
+                    <CategoryClothes
+                        categoryType={categoryType}
+                        clothes={clotes}
                         clotheImage={images}
                         ratingImage={ratingImages}
-                        handlerProductDetails={handlerProductDetails}
-                        buttonApears={true}
                     />
-                    <ClothesSection
-                        title="TOP SELLING"
-                        products={topSellings}
-                        clotheImage={images}
-                        ratingImage={ratingImages}
-                        handlerProductDetails={handlerProductDetails}
-                        buttonApears={true}
-                    />
-                    <BrowseStyle/>
-                    <GoodReviews/>
                     <Footer/>
                 </section>
             </section>
         </Fragment>
-    );
+    )
 }
