@@ -1,7 +1,13 @@
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function ClosedIcon () {
+type Props = {
+    handlerClose?: () => void;
+}
+
+export default function ClosedIcon ({handlerClose} : Props) {
     return (
-        <CloseIcon/>
-    )
+        <div onClick={handlerClose} style={{ cursor: 'pointer' }}>
+            <CloseIcon />
+        </div>
+    );
 }

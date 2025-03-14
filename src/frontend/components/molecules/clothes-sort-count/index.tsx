@@ -22,7 +22,7 @@ export default function ClothesSortCount({ categoryType, clothes, currentPage, i
                     <h3>
                         Showing {start} - {end} of {clothes.length} Products
                     </h3>
-                    <h3>
+                    <h3 className={styles.section}>
                         Sort by:
                         <span style={{ color: "#000000" }}> Most Popular </span>
                         <IconArrowDonw />

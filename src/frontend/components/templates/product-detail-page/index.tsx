@@ -106,7 +106,7 @@ export default function ProductDetailPage({ clotheId }: Props) {
                 <div className={styles.containerBox}>
                     <HomePageHeader/>
                     <ClotheDetails clothe={clothe} ratingImage={ratingImages} clotheImage={clotheImage}/>
-                    {/*<AllReviews dataReviews={reviews} ratingImage={ratingUserImage}/>*/}
+                    <AllReviews dataReviews={reviews} ratingImage={ratingUserImage}/>
                     <ClothesSection
                         title="You might also like"
                         products={alsoLikeClothes}
