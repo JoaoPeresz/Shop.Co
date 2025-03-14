@@ -7,12 +7,15 @@ import ClothesNavigation from "@/src/frontend/components/molecules/clothes-navig
 import ClothesSortCount from "@/src/frontend/components/molecules/clothes-sort-count";
 import LineBar from "@/src/frontend/components/atoms/line-bar";
 import ClothesFilter from "src/frontend/components/organisms/clothes-filter";
+import { useRouter } from "next/navigation";
+import Skeleton from "@mui/material/Skeleton";
 
 type Props = {
     categoryType: string;
     clothes: ProductDTO[];
     clotheImage: { [id: string]: string };
     ratingImage: { [id: string]: string };
+    loading: boolean;
 };
 
 export default function CategoryClothes({
@@ -20,7 +23,21 @@ export default function CategoryClothes({
                                             clothes,
                                             clotheImage,
                                             ratingImage,
+                                            loading
                                         }: Props) {
+    const [isDesktop, setIsDesktop] = useState<boolean>(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsDesktop(window.innerWidth > 1081);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const [internalPriceRange, setInternalPriceRange] = useState<number[]>([0, 350]);
     const [internalSelectedTypes, setInternalSelectedTypes] = useState<string[]>([]);
     const [internalSelectedColors, setInternalSelectedColors] = useState<string[]>([]);
@@ -33,7 +50,6 @@ export default function CategoryClothes({
     const itemsPerPage = 9;
 
     const handlerApplyFilters = () => {
-        console.log("entrando")
         setAppliedPriceRange(internalPriceRange);
         setAppliedSelectedTypes(internalSelectedTypes);
         setAppliedSelectedColors(internalSelectedColors);
@@ -80,10 +96,66 @@ export default function CategoryClothes({
     const endIndex = currentPage * itemsPerPage;
     const currentClothes = filteredClothes.slice(startIndex, endIndex);
 
+    const router = useRouter();
+
+    if (!isDesktop) {
+        return <Fragment>
+            <section className={styles.container}>
+                <CategoryNavigation categoryType={categoryType}/>
+                <section className={styles.categoryArea}>
+                    <section className={styles.containerAllClothes}>
+                        <section className={styles.containerMobile}>
+                            <ClothesSortCount
+                                categoryType={categoryType}
+                                clothes={filteredClothes}
+                                currentPage={currentPage}
+                                itemsPerPage={itemsPerPage}
+                            />
+                            <ClothesFilter
+                                clothes={clothes}
+                                toggleTypeSelection={toggleTypeSelection}
+                                selectedTypes={internalSelectedTypes}
+                                setPriceRange={setInternalPriceRange}
+                                priceRange={internalPriceRange}
+                                selectedColors={internalSelectedColors}
+                                toggleColorSelection={toggleColorSelection}
+                                handlerApplyFilters={handlerApplyFilters}
+                            />
+                        </section>
+                        <section className={styles.cardsContainer}>
+                            <section className={styles.cardsContainerBox}>
+                                {currentClothes.map((product, index) => (
+                                    <ClothesCard
+                                        ratingImage={ratingImage[product.id]}
+                                        key={product.id}
+                                        handlerProductDetails={() => {
+                                            router.push(`/product-details/${product.id}`)
+                                        }}
+
+                                        index={index}
+                                        product={product}
+                                        clotheImage={clotheImage[product.id]}
+                                    />
+                                ))}
+                            </section>
+                        </section>
+                        <div className={styles.bottomBar}/>
+                        <LineBar/>
+                        <ClothesNavigation
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={setCurrentPage}
+                        />
+                    </section>
+                </section>
+            </section>
+        </Fragment>;
+    }
+
     return (
         <Fragment>
             <section className={styles.container}>
-                <CategoryNavigation categoryType={categoryType} />
+                <CategoryNavigation categoryType={categoryType}/>
                 <section className={styles.categoryArea}>
                     <ClothesFilter
                         clothes={clothes}
@@ -102,22 +174,47 @@ export default function CategoryClothes({
                             currentPage={currentPage}
                             itemsPerPage={itemsPerPage}
                         />
-                        <section className={styles.cardsContainer}>
-                            <section className={styles.cardsContainerBox}>
-                                {currentClothes.map((product, index) => (
-                                    <ClothesCard
-                                        ratingImage={ratingImage[product.id]}
-                                        key={product.id}
-                                        handlerProductDetails={() => {}}
-                                        index={index}
-                                        product={product}
-                                        clotheImage={clotheImage[product.id]}
-                                    />
-                                ))}
+                        {loading ? (
+                            <section className={styles.containerSkeleton}>
+                                <div className={styles.skeletonGrid}>
+                                    {Array.from(new Array(9)).map((_, index) => (
+                                        <div key={index} className={styles.skeletonCard}>
+                                            <Skeleton
+                                                variant="rectangular"
+                                                sx={{
+                                                    width: '295px',
+                                                    height: '298px',
+                                                    borderRadius: '8px'
+                                                }}
+                                            />
+                                            <Skeleton width="120px" height={27} sx={{mt: 1}}/>
+                                            <Skeleton width="100px" height={27} sx={{mt: 1}}/>
+                                            <Skeleton width="80px" height={19}/>
+                                        </div>
+                                    ))}
+                                </div>
                             </section>
-                        </section>
-                        <div className={styles.bottomBar} />
-                        <LineBar />
+                        ) : (
+                            <section className={styles.cardsContainer}>
+                                <section className={styles.cardsContainerBox}>
+                                    {currentClothes.map((product, index) => (
+                                        <ClothesCard
+                                            ratingImage={ratingImage[product.id]}
+                                            key={product.id}
+                                            handlerProductDetails={() => {
+                                                router.push(`/product-details/${product.id}`)
+                                            }}
+
+                                            index={index}
+                                            product={product}
+                                            clotheImage={clotheImage[product.id]}
+                                        />
+                                    ))}
+                                </section>
+                            </section>
+                        )}
+                        <div className={styles.bottomBar}/>
+                        <LineBar/>
                         <ClothesNavigation
                             currentPage={currentPage}
                             totalPages={totalPages}

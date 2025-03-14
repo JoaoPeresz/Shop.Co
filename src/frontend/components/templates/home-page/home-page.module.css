@@ -14,3 +14,40 @@
     align-items: center;
     background-color: #ffffff;
 }
+
+.containerSkeleton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.skeletonContainer {
+    width: 100%;
+    padding: 20px;
+}
+
+.skeletonGrid {
+    margin-top: 48px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.skeletonCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alsoLikeSection {
+    margin-top: 40px;
+}
+
+.sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}

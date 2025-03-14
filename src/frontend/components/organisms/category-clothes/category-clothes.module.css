@@ -1,37 +1,119 @@
-.container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 100px;
-    box-sizing: border-box;
-    margin-top: 24px;
+@media (max-width: 1080px) {
+    .container {
+        width: 390px;
+        padding: 0 16px;
+        box-sizing: border-box;
+        margin-top: 24px;
+    }
+
+    .categoryArea {
+        width: 100%;
+        gap: 20px;
+        margin-top: 24px;
+    }
+
+    .containerMobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .cardsContainer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 1212px;
+        margin-top: 24px;
+    }
+
+    .cardsContainerBox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }
 
-.categoryArea {
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    margin-top: 24px;
-}
+@media (min-width: 1081px) {
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 100px;
+        box-sizing: border-box;
+        margin-top: 24px;
+    }
 
-.containerAllClothes {
-    width: 74.6%;
-    display: flex;
-    flex-direction: column;
-}
+    .categoryArea {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        margin-top: 24px;
+    }
 
-.cardsContainer {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 1212px;
-    margin-top: 24px;
-}
+    .containerAllClothes {
+        width: 74.6%;
+        display: flex;
+        flex-direction: column;
+    }
 
-.cardsContainerBox {
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: space-between;*/
-    gap: 20px;
+    .containerSkeleton {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skeletonContainer {
+        width: 100%;
+        background-color: #b62e23;
+        padding: 20px;
+        display: flex;
+    }
+
+    .skeletonGrid {
+        margin-top: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+
+    .skeletonCard {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .alsoLikeSection {
+        margin-top: 40px;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
+    .cardsContainer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 1212px;
+        margin-top: 24px;
+    }
+
+    .cardsContainerBox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }
