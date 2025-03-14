@@ -51,7 +51,6 @@
         display: flex;
         width: 310px;
         height: 190px;
-        background-color: #FF3333;
         border-radius: 20px;
     }
 
@@ -118,11 +117,13 @@
     .containerTopics:nth-child(4) img {
         width: 407px;
         height: 289px;
+        cursor: pointer;
     }
 
     .containerTopics:nth-child(2) img,
     .containerTopics:nth-child(3) img {
         width: 684px;
+        cursor: pointer;
         height: 289px;
     }
 
