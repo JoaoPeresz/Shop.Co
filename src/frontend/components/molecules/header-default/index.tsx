@@ -34,7 +34,9 @@ export default function HeaderDefault () {
                     <section className={styles.userContainer}>
                         <IconShoppingCart/>
                         <IconProfile/>
-                        <IconSearch/>
+                        <div className={styles.searchIcon}>
+                            <IconSearch/>
+                        </div>
                     </section>
                 </section>
             </header>

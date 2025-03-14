@@ -1,14 +1,31 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import styles from "./clothes-images.module.css";
 import SideImages from "@/src/frontend/components/atoms/side-images";
 import ViewImage from "@/src/frontend/components/atoms/view-image";
-import imageFront from "../../../../../public/assets/product-details/image-front.png";
-import {StaticImageData} from "next/image";
+import { StaticImageData } from "next/image";
 
-export default function ClothesImages() {
-    const [selectedImage, setSelectedImage] = useState(imageFront);
+type Props = {
+    clotheImage: StaticImageData | string;
+};
 
-    const handleImageClick = (image: StaticImageData) => {
+export default function ClothesImages({ clotheImage }: Props) {
+    const [selectedImage, setSelectedImage] = useState<StaticImageData | string>(clotheImage);
+    const [windowWidth, setWindowWidth] = useState<number>(0);
+
+    useEffect(() => {
+        setSelectedImage(clotheImage);
+    }, [clotheImage]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const handleImageClick = (image: StaticImageData | string) => {
         setSelectedImage(image);
     };
 
@@ -16,8 +33,17 @@ export default function ClothesImages() {
         <Fragment>
             <section className={styles.container}>
                 <section className={styles.containerBox}>
-                    <SideImages onImageClick={handleImageClick} />
-                    <ViewImage image={selectedImage} />
+                    {windowWidth < 1080 ? (
+                        <>
+                            <ViewImage image={selectedImage} />
+                            <SideImages onImageClick={handleImageClick} clotheImage={clotheImage} />
+                        </>
+                    ) : (
+                        <>
+                            <SideImages onImageClick={handleImageClick} clotheImage={clotheImage} />
+                            <ViewImage image={selectedImage} />
+                        </>
+                    )}
                 </section>
             </section>
         </Fragment>
