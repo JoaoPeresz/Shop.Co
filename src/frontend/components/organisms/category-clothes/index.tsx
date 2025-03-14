@@ -7,6 +7,7 @@ import ClothesNavigation from "@/src/frontend/components/molecules/clothes-navig
 import ClothesSortCount from "@/src/frontend/components/molecules/clothes-sort-count";
 import LineBar from "@/src/frontend/components/atoms/line-bar";
 import ClothesFilter from "src/frontend/components/organisms/clothes-filter";
+import {useRouter} from "next/navigation";
 
 type Props = {
     categoryType: string;
@@ -33,7 +34,6 @@ export default function CategoryClothes({
     const itemsPerPage = 9;
 
     const handlerApplyFilters = () => {
-        console.log("entrando")
         setAppliedPriceRange(internalPriceRange);
         setAppliedSelectedTypes(internalSelectedTypes);
         setAppliedSelectedColors(internalSelectedColors);
@@ -80,6 +80,8 @@ export default function CategoryClothes({
     const endIndex = currentPage * itemsPerPage;
     const currentClothes = filteredClothes.slice(startIndex, endIndex);
 
+    const router = useRouter();
+
     return (
         <Fragment>
             <section className={styles.container}>
@@ -108,7 +110,8 @@ export default function CategoryClothes({
                                     <ClothesCard
                                         ratingImage={ratingImage[product.id]}
                                         key={product.id}
-                                        handlerProductDetails={() => {}}
+                                        handlerProductDetails={() => {router.push(`/product-details/${product.id}`)}}
+
                                         index={index}
                                         product={product}
                                         clotheImage={clotheImage[product.id]}

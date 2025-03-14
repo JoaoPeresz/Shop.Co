@@ -7,19 +7,22 @@ import ProductDTO from "@/src/models/products-dto";
 type Props = {
     clothe: ProductDTO | null;
     ratingImage: { [id: string]: string };
+    clotheImage: { [id: string]: string };
 };
 
-export default function ClotheDetails({ clothe, ratingImage }: Props) {
+export default function ClotheDetails({ clothe, ratingImage, clotheImage }: Props) {
     return (
         <Fragment>
             <section className={styles.container}>
                 <section className={styles.containerBox}>
-                    <ClothesImages />
                     {clothe && (
-                        <ClothesInfos
-                            clothe={clothe}
-                            ratingImage={ratingImage[clothe.id] || ""}
-                        />
+                        <>
+                            <ClothesImages clotheImage={clotheImage[clothe.id] || ""} />
+                            <ClothesInfos
+                                clothe={clothe}
+                                ratingImage={ratingImage[clothe.id] || ""}
+                            />
+                        </>
                     )}
                 </section>
             </section>

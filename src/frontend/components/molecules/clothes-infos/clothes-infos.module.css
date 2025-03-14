@@ -1,99 +1,203 @@
-.infoContainer {
-    width: 50%;
-    height: 530px;
+@media screen and (max-width: 1080px) {
+    .infoContainer {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        color: black;
+    }
+
+    .clotheName {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: start;
+    }
+
+    .ratingContainer {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-top: 10px;
+        gap: 8px;
+    }
+
+    .ratingImage {
+        width: 105px;
+        height: auto;
+    }
+
+    .rating {
+        display: flex;
+        color: black;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .ratingMax {
+        color: #00000099;
+    }
+
+    .valuesContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        align-items: center;
+        margin-top: 18px;
+    }
+
+    .price {
+        font-size: 24px;
+        line-height: 32px;
+        color: black;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .previousPrice {
+        display: flex;
+        flex-direction: row;
+        font-size: 24px;
+        line-height: 32px;
+        color: black;
+        opacity: 40%;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    .containerDiscount {
+        width: 58px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        border-radius: 62px;
+        background-color: rgba(255, 51, 51, 0.1);
+    }
+
+    .discount {
+        color: #FF3333;
+        font-family: 'Satoshi', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+    }
+
+    .discountContainer {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+    }
+
+    .description {
+        width: 100%;
+        margin-top: 24px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        text-align: start;
+        font-size: 16px;
+        line-height: 20px;
+        color: #00000099;
+    }
 }
 
-.clotheName {
-    font-family: "Integral CF", sans-serif;
-    color: black;
-    font-weight: bold;
-    font-size: 40px;
-    height: 48px;
-    text-transform: uppercase;
-}
+@media (min-width: 1081px) {
+    .infoContainer {
+        width: 50%;
+        height: 530px;
+    }
 
-.ratingContainer {
-    height: 25px;
-    margin-top: 14px;
-    display: flex;
-    gap: 16px;
-}
+    .clotheName {
+        width: 150%;
+        font-family: "Integral CF", sans-serif;
+        color: black;
+        font-weight: bold;
+        font-size: 40px;
+        height: 48px;
+        text-transform: uppercase;
+    }
 
-.ratingImage {
-    width: 139px;
-    height: 25px;
-}
+    .ratingContainer {
+        height: 25px;
+        margin-top: 14px;
+        display: flex;
+        gap: 16px;
+    }
 
-.rating {
-    display: flex;
-    color: black;
-    font-size: 16px;
-    line-height: 22px;
-}
+    .ratingImage {
+        width: 139px;
+        height: 25px;
+    }
 
-.ratingMax {
-    color: #00000099;
-}
+    .rating {
+        display: flex;
+        color: black;
+        font-size: 16px;
+        line-height: 22px;
+    }
 
-.valuesContainer {
-    display: flex;
-    color: black;
-    gap: 12px;
-    margin-top: 14px;
-    font-weight: bold;
-}
+    .ratingMax {
+        color: #00000099;
+    }
 
-.price {
-    font-size: 24px;
-    line-height: 32px;
-    color: black;
-    font-family: 'Satoshi', sans-serif;
-}
+    .valuesContainer {
+        display: flex;
+        color: black;
+        gap: 12px;
+        margin-top: 14px;
+        font-weight: bold;
+    }
 
-.previousPrice {
-    display: flex;
-    flex-direction: row;
-    font-size: 24px;
-    line-height: 32px;
-    color: black;
-    opacity: 40%;
-    font-family: 'Satoshi', sans-serif;
-}
+    .price {
+        font-size: 24px;
+        line-height: 32px;
+        color: black;
+        font-family: 'Satoshi', sans-serif;
+    }
 
-.containerDiscount {
-    width: 58px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    border-radius: 62px;
-    background-color: rgba(255, 51, 51, 0.1);
-}
+    .previousPrice {
+        display: flex;
+        flex-direction: row;
+        font-size: 24px;
+        line-height: 32px;
+        color: black;
+        opacity: 40%;
+        font-family: 'Satoshi', sans-serif;
+    }
 
-.discount {
-    color: #FF3333;
-    font-family: 'Satoshi', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 16px;
-}
+    .containerDiscount {
+        width: 58px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        border-radius: 62px;
+        background-color: rgba(255, 51, 51, 0.1);
+    }
 
-.discountContainer {
-    width: 100%;
-    display: flex;
-    gap: 16px;
-}
+    .discount {
+        color: #FF3333;
+        font-family: 'Satoshi', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+    }
 
-.description {
-    width: 100%;
-    height: 33px;
-    display: flex;
-    align-items: center;
-    text-align: start;
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 8px;
-    color: #00000099;
-}
+    .discountContainer {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+    }
 
+    .description {
+        width: 100%;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        text-align: start;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 8px;
+        color: #00000099;
+    }
+}

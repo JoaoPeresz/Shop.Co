@@ -72,7 +72,7 @@ export default function PriceFilter({ onPriceChange, currentRange }: PriceFilter
                                 valueLabelDisplay="on"
                                 valueLabelFormat={(val) => `$${val}`}
                                 min={0}
-                                max={250}
+                                max={350}
                                 disableSwap
                                 sx={{
                                     color: "black",

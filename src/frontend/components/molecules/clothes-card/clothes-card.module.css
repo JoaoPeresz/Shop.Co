@@ -91,6 +91,7 @@
     .productImage {
         width: 100%;
         height: 290px;
+        border-radius: 20px;
     }
 
     .containerCard {
